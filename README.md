@@ -5,7 +5,7 @@ testing
 
 <h1>List of my Assignments</h1>
 
-<ul>
+<ol>
 
 <li>
 
@@ -16,4 +16,4 @@ testing
 <li><a href="lab01/aboutme.html">Click here for Lab 01</a></li>
 
 
-</ul>
+</ol>
