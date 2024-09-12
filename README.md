@@ -2,4 +2,4 @@
 my place to store all the HTML I will be learning this semester!
 
 
-<a href="#">test</a>
+<a href="lab01/aboutme.html">test</a>
