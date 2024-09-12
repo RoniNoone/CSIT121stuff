@@ -6,4 +6,4 @@ testing
 <h1>Testing</h1>
 
 
-<a href="lab01/aboutme.html">test</a>
+<a href="lab01/aboutme.html">Click here for Lab 01</a>
