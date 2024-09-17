@@ -1,5 +1,5 @@
 # CSIT121stuff
-my place to store all the HTML I will be learning this semester!
+Demo for my CSIT 121 Students
 
 testing
 
@@ -9,11 +9,14 @@ testing
 
 <li>
 
-<a href="practice/demo.html">Click here for my demo/practice file</a>
+<a href="practice/demo.html">Practice file</a>
   
 </li>
 
-<li><a href="lab01/aboutme.html">Click here for Lab 01</a></li>
+<li><a href="lab01/aboutme.html">Lab 01</a></li>
 
+<li>
+  <a href="lab02/">Lab 02</a>
+</li>
 
 </ol>
