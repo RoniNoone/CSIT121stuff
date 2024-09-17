@@ -1,8 +1,6 @@
 # CSIT121stuff
 Demo for my CSIT 121 Students
 
-testing
-
 <h1>List of my Assignments</h1>
 
 <ol>
