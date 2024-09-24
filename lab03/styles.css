@@ -1,11 +1,82 @@
 body {
-    background-color: aqua;
+    background-color: DarkCyan;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 #special {
-    background-color: red;
+    background-color: LightYellow;
+}
+.highlight {
+    background-color: LightGreen;
 }
 article {
-    border: 2px solid #ccc;
-    width: 500px;
+    padding: 1em;
+}
+
+main, header, footer {
+    width: 70%;
+    margin: auto;
+    background-color: LightCyan;
+    border: 1px solid LightSeaGreen;
+}
+article {
+    background-color: Azure;
+}
+article header {
+    width: 100%;
+    border: none; 
+    background-color: transparent;
+    /*needed to clear headings that got applied above*/
+}
+
+h1, h2, h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header h1 {
+    padding: .5em;
+}
+
+main h2 {
+    border-bottom: 1px solid DarkCyan;
+    margin-bottom:-.8em;
+}
+
+.author {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: normal;
+    font-weight: lighter;
+    font-style: italic; /*removed em tag and replaced with css */
+}
+
+/*all link style that are shared among all states*/
+main a {
+    font-weight: bold;
+}
+/* unvisited link */
+main a:link {
+    color: CadetBlue;
+  }
+  
+  /* visited link */
+  main a:visited {
+    color: LightSeaGreen;
+  }
+  
+  /* mouse over link */
+  main a:hover {
+    color: DarkCyan;
+    background-color: azure;
+  }
+  
+  /* selected link */
+  main  a:active {
+    color: Teal;
+    background-color: LightSeaGreen;
+  }
+
+
+footer p{
+    padding: 1em;
+    font-style: italic;
 }
