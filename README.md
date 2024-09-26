@@ -5,7 +5,12 @@ Demo for my CSIT 121 Students
 
 <ol>
 <li><a href="practice/demo.html">Practice file</a></li>
+<li></li>
+</ol>
+
+<ol>
 <li><a href="lab01/aboutme.html">Lab 01</a></li>
 <li><a href="lab02/">Lab 02</a></li>
 <li><a href="lab03">Lab 03</a></li>
 </ol>
+
