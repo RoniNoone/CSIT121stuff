@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Stylesheet Example</title>
+    <link id="stylesheet" rel="stylesheet" href="standard.css">
+    <link id="shared" rel="stylesheet" href="shared.css">
+    <script>
+        function changeStylesheet(sheet) {
+            document.getElementById('stylesheet').setAttribute('href', sheet);
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Page Layouts with CSS</h1>
+            <p class="tagline">An Interactive Example</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <h2>Main Content</h2>
+                <p>This is the main content area.</p>
+                <h3>Layouts</h3>
+                <p>This one page HTML document allows the users to 
+                    cycle through different CSS files. The HTML structure
+                    remains the same. Simply click on one of the 
+                    buttons in the Sidebar to change the layout 
+                    of the enture page. 
+                </p>
+                <p> When you click a button it called a simple JavaScript function
+                    called changeStylesheet() that dynamically 
+                    changed what external CSS file to link to. The JavaScript
+                    function looks like: 
+<pre> <code>
+    &lt;script&gt;
+        function changeStylesheet(sheet) {
+            document.getElementById('stylesheet').setAttribute('href', sheet);
+        }
+    &lt;/script&gt;
+</code>
+</pre>
+                </p>
+                <h3>CSS Techniques Used</h3>
+                <h4>Flex</h4>
+                <p>CSS Flexbox is a layout model that makes it easier to design flexible and 
+                    responsive layouts. Flexbox allows you to easily align and distribute 
+                    space among items in a contain even when the size is unknown or dynamic.</p>
+                    <p>Create a flex container on the parent element using <code>display: flex;</code></p>
+                <ul>
+                    <li>For the flex-container:
+                    <ul>
+                    <li><code>flex-direction</code>: Sets the main axis (row, column, row-reverse, column-reverse).</li>
+                    <li><code>justify-content</code>: Aligns items along the main axis.</li>
+                    <li><code>align-items</code>: Aligns items along the cross axis.</li>
+                    </ul>
+                    </li>
+                    <li>For the flex-items:
+                    <ul>
+                    <li><code>flex-grow</code>: Determines how much an item can grow.</li>
+                    <li><code>flex-shrink</code>: Determines how much an item can shrink.</li>
+                    <li><code>flex-basis</code>: Sets the initial size of an item.</li>
+                    </ul>
+                    </li>
+                    </ul>
+                    <h4>Grid</h4>
+                    <p>CSS Grid Layout is another powerful layout system for web design. 
+                        Grid Layout allows you to create two-dimensional layouts (rows and columns).  
+                        It's ideal for designing entire page layouts or complex components as 
+                        grid items can be placed precisely in the grid.</p>
+
+                    <p>Create a grid container on the parent element using <code>display: grid;</code></p>
+
+                        <ul>
+                        <li>For the grid container:
+                        <ul>
+                        <li><code>grid-template-columns</code>: defines the columns of the grid</li>
+                        <li><code>grid-template-rows</code>: defines the rows of the grid</li>
+                        <li><code>gap</code>: sets the spacing between grid cells</li>
+                        </ul>
+                        </li>
+                        <li>For the grid items:
+                        <ul>
+                        <li><code>grid-column</code>: specifies which column(s) an item should occupy</li>
+                        <li><code>grid-row</code>: specifies which row(s) an item should occupy.</li>
+                        </ul>
+                        </li>
+                        </ul>
+            </section>
+            <aside>
+                <h2>Sidebar</h2>
+                <p>Choose a layout below:</p>
+                <ul>
+                    <li><button onclick="changeStylesheet('standard.css')">Normal Flow</button></li>
+                    <li><button onclick="changeStylesheet('flex1.css')">Flex Full</button></li>
+                    <li><button onclick="changeStylesheet('flex2.css')">Flex Stacked</button></li>
+                    <li><button onclick="changeStylesheet('grid1.css')">Grid Full</button></li>
+                    <li><button onclick="changeStylesheet('grid2.css')">Grid Three Col</button></li>
+                </ul>
+            </aside>
+        </main>
+        <footer>
+            <p>&copy;2024 Prof. Noone for CSIT 121 &amp; CCBC</p>
+        </footer>
+    </div>
+</body>
+</html>

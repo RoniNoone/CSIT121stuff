@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* flex to center page */
+    display: flex;
+    justify-content: center;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 75vw;
+    /* 75% of the view width */
+}
+header, nav, aside, section, footer {
+    padding: 20px;
+    margin: 10px;
+}
+header {
+    background-color: DarkGreen;
+    color: white;
+}
+ 
+nav {
+    background-color: DarkSeaGreen;
+    display: flex; /* centers links */
+    justify-content: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+main {
+    display: flex;
+    flex-direction: column; /* stack the children */
+}
+section {
+    background-color: HoneyDew;
+}
+aside {
+    background-color: DarkSeaGreen;
+}
+aside ul {
+    /*makes buttons horizontal... */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+footer {
+    background-color: DarkGreen;
+    color: white;
+    text-align: center;
+}
