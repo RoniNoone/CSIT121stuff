@@ -20,4 +20,5 @@ pre {
     border: 1px solid #ccc;
     background-color: white;
     font-size: 125%;
+    overflow: auto; /*don't break box - add scrollbars */
 }
