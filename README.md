@@ -8,6 +8,7 @@ Demo for my CSIT 121 Students
 <ol>
 <li><a href="practice/demo.html">Practice file</a></li>
 <li><a href="practice/images_practice/images.html">Image Examples</a></li>
+  <li><a href="practice/layouts">Layout Examples</a></li>
 </ol>
 
 <h2>Lab Assignment</h2>
