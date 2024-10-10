@@ -39,10 +39,7 @@ nav ul li a {
     text-decoration: none;
     color: #333;
 }
-main {
-    display: flex;
-    flex-direction: column; /* stack the children */
-}
+ 
 section {
     background-color: HoneyDew;
 }
