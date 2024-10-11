@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Stylesheet Example</title>
+    <link id="stylesheet" rel="stylesheet" href="standard.css">
+    <link id="shared" rel="stylesheet" href="shared.css">
+    <script>
+        function changeStylesheet(sheet) {
+            document.getElementById('stylesheet').setAttribute('href', sheet);
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Page Layouts with CSS</h1>
+            <p class="tagline">An Interactive Example</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="media_queries.html">Media Queries</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </nav>
+
+<main>
+    <section>
+        <h2>Main Content</h2>
+        <p>This is the main content area. Without css file applied it will layout in the normal flow. </p>
+        <h3>Media Queries</h3>
+        <p>This second version of this site now includes mobile friendly layouts that use
+            Media Queries to apply different CSS based on screen size. 
+        </p>
+        <p> The @media rule, introduced in CSS2, made it possible to define different style rules for different media types.
+            A media query consists of a media type and can contain one or more media features, which resolve to either true or false.
+
+</p>
+<pre> <code>
+    &lt;style&gt;
+        @media not|only mediatype and (media feature) and (media feature) {
+            CSS-Code;
+        }
+    &lt;/style&gt;
+</code>
+</pre>                
+                <h3>Media Querie Resources</h3>
+     
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries" target="_blank">
+                            Beginner's guide to media queries
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="https://css-tricks.com/a-complete-guide-to-css-media-queries/" target="_blank">
+                            CSS Media Queries Guide
+                    </a>
+                    </li>
+                    <li>                        
+                        <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.php" target="_blank">
+                            CSS @media Rule
+                    </a>
+                    </li>
+                    </ul>
+                     
+            </section>
+            <aside>
+                <h2>Sidebar</h2>
+                <p>Choose a layout below:</p>
+                <ul>
+                    <li><button onclick="changeStylesheet('standard.css')">Normal Flow</button></li>
+                    <li><button onclick="changeStylesheet('flex1.css')">Flex Full</button></li>
+                    <li><button onclick="changeStylesheet('flex2.css')">Flex Stacked</button></li>
+                    <li><button onclick="changeStylesheet('grid1.css')">Grid Full</button></li>
+                    <li><button onclick="changeStylesheet('grid2.css')">Grid Three Col</button></li>
+                </ul>
+            </aside>
+        </main>
+        <footer>
+            <p>&copy;2024 Prof. Noone for CSIT 121 &amp; CCBC</p>
+        </footer>
+    </div>
+</body>
+</html>
