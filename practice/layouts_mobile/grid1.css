@@ -42,13 +42,17 @@ nav ul li a {
     text-decoration: none;
     color: #333;
 }
-main {
-    grid-area: main;
-    display: grid; /* grid in grid! */
-    grid-template-columns: 1fr 5fr;
-    grid-template-areas:
-        "aside section";
-}
+
+@media only screen and (min-width: 1000px) {
+    main {
+        grid-area: main;
+        display: grid; /* grid in grid! */
+        grid-template-columns: 1fr 5fr;
+        grid-template-areas:
+            "aside section";
+    }
+  }
+
 section {
     grid-area: section;
     background-color: Snow;

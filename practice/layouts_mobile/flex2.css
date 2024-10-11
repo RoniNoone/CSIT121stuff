@@ -9,9 +9,23 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    width: 75vw;
-    /* 75% of the view width */
+    width: 80vw;
+    /* 80% of the view width */
 }
+
+@media only screen and (max-width: 1000px) {
+    /* use 100 percent of screen with 1000 px or less*/
+    .page {
+        width: 100vw;
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    /* use 50 percent of screen with 1500 px or more*/
+    .page {
+        width: 65vw;
+    }
+  }
+
 header, nav, aside, section, footer {
     padding: 20px;
     margin: 10px;
@@ -46,12 +60,15 @@ section {
 aside {
     background-color: DarkSeaGreen;
 }
-aside ul {
-    /*makes buttons horizontal... */
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
+
+@media only screen and (min-width: 1200px) {
+    aside ul {
+        /*makes buttons horizontal over 1200 px wide */
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+  }
 footer {
     background-color: DarkGreen;
     color: white;
