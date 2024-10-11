@@ -9,7 +9,7 @@ Demo for my CSIT 121 Students
 <li><a href="practice/demo.html">Practice file</a></li>
 <li><a href="practice/images_practice/images.html">Image Examples</a></li>
   <li><a href="practice/layouts">Layout Examples</a></li>
-  <li><a href="practice/layouts_mobile">Layout Examples _v02 - With Media Queries!</a></li>
+  <li><a href="practice/layouts_mobile">Layout Examples _v02 - With Media Queries!</a> (incomplete)</li>
 </ol>
 
 <h2>Lab Assignment</h2>
