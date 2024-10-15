@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid darkgray;
+            background-color: #fff;
+        }
+        /* Media query for devices with a min width of 1025px
+        display content horizontally since we have the width */
+        @media (min-width: 1025px) {
+            .page {
+                max-width: 90%;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+            }
+            main {
+                display: flex;
+                overflow: auto;
+            }
+            nav {
+                display: none;
+            }
+        }
+        main > section, aside {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid darkgrey;
+            }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .box {
+            width: 100%;
+            height: 100px;
+            background-color: lightblue;
+            margin: 20px 0;
+        }
+        pre {
+            overflow: auto;
+        }
+
+        /*media queries  below are for easy demonstration*/
+        /* Media query for devices with a max width of 600px */
+        @media (max-width: 600px) {
+            body, .box {
+                background-color: lightcoral;
+            }
+        }
+        /* Media query for devices with a min width of 601px and max width of 1024px */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            body, .box {
+                background-color: lightgreen;
+            }
+        }
+        /* Media query for devices with a min width of 1025px */
+        @media (min-width: 1025px) {
+            body, .box {
+                background-color: lightblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>Media Query and Named Anchor Example</h1>
+        <p>Media queries are a key component of responsive web design. 
+            They allow you to apply different styles based on characteristics of an device, 
+            such as its width, height, or orientation.</p>
+            <p>Named anchors are a simple yet powerful feature in HTML that can greatly 
+                improve the usability of your webpages. By using the <code>id</code> 
+                attribute, you can create links that point to specific sections, 
+                making it easier for users to navigate your content. Please Note: You will only see the 
+            named anchor links on this page when on smaller screens thanks to media queries! </p>
+        <nav>
+            <ul>
+                <li><a href="#example1">Basic Media Query</a></li>
+                <li><a href="#example2">Multiple Conditions</a></li>
+                <li><a href="#example3">Orientation</a></li>
+                <li><a href="#anchors">Named Anchors</a></li>
+            </ul>
+        </nav>
+        <main>
+        <section id="example1">
+            <h2>Basic Media Query</h2>
+            <p>In this example, we have a box that changes its background color based on the width of the viewport:</p>
+            <div class="box">              
+    <pre><code>
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .box {
+            background-color: lightgreen;
+        }
+    }</code></pre>
+
+            </div>
+            <p>Resize the browser window to see the effect of the media query. When the width of the viewport is 600px or less, the background color of the box changes from lightblue to lightcoral.</p>
+        </section>
+        <section id="example2"> 
+            <h2>Multiple Conditions</h2>
+            <p>Media queries can also be combined to apply styles based on multiple conditions. For example, the following media query applies styles when the viewport width is between 601px and 1024px:</p>
+            <pre><code>
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .box {
+            background-color: lightgreen;
+        }
+    }
+            </code></pre>
+            <p>Resize the browser window to see the effect of this media query. When the width of the viewport is between 601px and 1024px, the background color of the box changes to lightgreen.</p>
+    </section>
+    <section id="example3">
+        <h2>Orientation</h2>
+        <p>Media queries can also be used to apply styles based on the orientation of the device. For example, the following media query applies styles when the device is in landscape mode:</p>
+        <pre><code>
+    @media (orientation: landscape) {
+        .box {
+            background-color: lightyellow;
+        }
+    }
+            </code></pre>
+        <p>Rotate your device to see the effect of this media query. When the device is in landscape mode, the background color of the box changes to lightyellow.</p>
+    </section>
+    </main>
+    <aside id="anchors">
+        <h2>Named Anchors</h2>
+        <p>This page also contains Named Ancors for the links 
+            that appear on smaller screens. </p>
+        <p>Named anchors are also known as fragment identifiers. They  
+            allow you to link to a specific part of a webpage. 
+            This can be useful for creating a table of contents, 
+            or for linking to a specific section of a long document.</p>
+    
+        <h2>What are Named Anchors?</h2>
+        <p>Named anchors are used to create a link to a specific section within a webpage. They are defined using the <code>id</code> attribute in HTML.</p>
+    
+        <h2>How to Use Named Anchors</h2>
+        <p>To create a named anchor, you need to assign an <code>id</code> 
+            attribute to the element you want to link to. Then, you can create a 
+            link that points to this <code>id</code>.</p>
+    
+        <h3>Example</h3>
+        <p>Here is an example of how to use named anchors:</p>
+        <pre>
+            <code>
+                &lt;!-- Define the named anchor --&gt;
+                &lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+                &lt;p&gt;This is the content of section 1.&lt;/p&gt;
+    
+                &lt;!-- Link to the named anchor --&gt;
+                &lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
+            </code>
+        </pre>
+    
+        <h2>Benefits of Named Anchors</h2>
+        <ul>
+            <li>Improves navigation within a webpage</li>
+            <li>Enhances user experience by allowing quick access to specific sections</li>
+            <li>Useful for creating a table of contents</li>
+        </ul>
+    
+    </aside>
+    </div>
+</body>
+</html>
