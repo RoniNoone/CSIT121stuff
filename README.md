@@ -11,8 +11,8 @@ Demo for my CSIT 121 Students
 <li><a href="practice/demo.html">Practice file</a></li>
 <li><a href="practice/images_practice/images.html">Image Examples</a></li>
   <li><a href="practice/layouts">Layout Examples</a></li>
-  <li><a href="practice/layouts_mobile">Layout Examples _v02 - With Media Queries!</a> (incomplete)</li>
-  <li><a href="practice/mediaQueryExample.html">One Page Media Query Example with Named Anchors</li>
+  <li><a href="practice/layouts_mobile">Layout Examples _v02 - With Media Queries!</a> (incomplete)</a></li>
+  <li><a href="practice/mediaQueryExample.html">One Page Media Query Example with Named Anchors</a></li>
 </ol>
 
 <h2>Lab Assignment</h2>
