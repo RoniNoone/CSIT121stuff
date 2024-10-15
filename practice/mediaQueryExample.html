@@ -74,6 +74,11 @@
                 background-color: lightblue;
             }
         }
+        @media (orientation: landscape) {
+        .box {
+            background-color: lightyellow;
+        }
+    }
     </style>
 </head>
 <body>
@@ -101,9 +106,9 @@
             <p>In this example, we have a box that changes its background color based on the width of the viewport:</p>
             <div class="box">              
     <pre><code>
-    @media (min-width: 601px) and (max-width: 1024px) {
+    @media (min-width: 1025px) {
         .box {
-            background-color: lightgreen;
+            background-color: lightblue;
         }
     }</code></pre>
 
@@ -156,12 +161,12 @@
         <p>Here is an example of how to use named anchors:</p>
         <pre>
             <code>
-                &lt;!-- Define the named anchor --&gt;
-                &lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
-                &lt;p&gt;This is the content of section 1.&lt;/p&gt;
-    
-                &lt;!-- Link to the named anchor --&gt;
-                &lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
+    &lt;!-- Define the named anchor --&gt;
+    &lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+    &lt;p&gt;This is the content of section 1.&lt;/p&gt;
+
+    &lt;!-- Link to the named anchor --&gt;
+    &lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
             </code>
         </pre>
     
