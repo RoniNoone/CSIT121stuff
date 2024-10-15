@@ -3,6 +3,8 @@ Demo for my CSIT 121 Students
 
 <h1>List of my Assignments</h1>
 
+<a href="https://roninoone.github.io/CSIT121stuff/">Click here to see the published versions. </a>
+
 <h2>Practices</h2>
 
 <ol>
