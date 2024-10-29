@@ -14,6 +14,7 @@ Demo for my CSIT 121 Students
   <li><a href="practice/layouts_mobile">Layout Examples _v02 - With Media Queries!</a> (incomplete)</a></li>
   <li><a href="practice/mediaQueryExample.html">One Page Media Query Example with Named Anchors</a></li>
   <li><a href="practice/table_example.html">Schedule Example for Activity Discussion</a></li>
+  <li><a href="practice/form_example.html">Form Example for Bonus Points</a></li>
 </ol>
 
 <h2>Lab Assignment</h2>
