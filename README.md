@@ -24,5 +24,6 @@ Demo for my CSIT 121 Students
 <li><a href="lab02/">Lab 02</a></li>
 <li><a href="lab03/">Lab 03</a></li>
 <li><a href="lab04/">Lab 04</a></li>
+<li><a href="lab07example/table.html">Lab 07 EXAMPLE</a></li>
 </ol>
 
