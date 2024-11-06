@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            font-family: "Poppins", serif;
+            background-color: GhostWhite;
+        }
+        .ball {
+            width: 100px;
+            height: 100px;
+            background-color: MediumPurple;
+            border: 2px solid RebeccaPurple;
+            border-radius: 50%;
+            animation-name: bounce;
+            position: absolute;
+            left: 2vw;
+            top: 40vh;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translate(2vw, 4vh);
+                background-color: Thistle;
+            }
+            20% {
+                transform: translate(20vw, 40vh);
+                background-color: Plum;
+            }
+            40% {
+                transform: translate(40vw, -40vh);
+                background-color: MediumOrchid;
+            }
+            60% {
+                transform: translate(60vw, 40vh);
+                background-color: MediumPurple;
+            }
+            80% {
+                transform: translate(80vw, -40vh);
+                background-color: DarkOrchid;
+            }
+            100% {
+                transform: translate(100vw, 0);
+                background-color: Indigo;
+            }
+        
+     
+
+        }
+
+        .info {
+            border: 2px solid RebeccaPurple;
+            padding: 2em;
+            background-color: white;
+        }
+        .info h2 {
+            margin-bottom: 10px;
+        }
+        .info dd {
+            margin-bottom: 10px
+        }
+        dt {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <div class="info">
+        <h2>Basic CSS Animation Options</h2>
+        <dl>
+            <dt>
+                animation-name:
+            </dt>
+            <dd>
+                Specifies the name of the @keyframes animation.
+            </dd>
+            <dt>
+                animation-duration:
+            </dt>
+            <dd>
+                Defines how long the animation takes to complete one cycle.
+            </dd>
+            <dt>
+                animation-timing-function:
+            </dt>
+            <dd>
+                Describes how the animation progresses through the duration of each cycle (e.g., ease, linear, ease-in, ease-out).
+            </dd>
+            <dt>
+                animation-delay:
+            </dt>
+            <dd>
+                Sets a delay before the animation starts.
+            </dd>
+            <dt>
+                animation-iteration-count:
+            </dt>
+            <dd>
+                Specifies the number of times the animation should repeat.
+            </dd>
+            <dt>
+                animation-direction:
+            </dt>
+            <dd>
+                Defines whether the animation should play in reverse on alternate cycles (e.g., normal, reverse, alternate).  
+            </dd>
+            <dt>
+                @keyframes:
+            </dt>
+            <dd>
+                Used to define the animation. It specifies the keyframes (or waypoints) along the animation sequence.  
+            </dd>
+            <dt>
+                transform:
+            </dt>
+            <dd>
+                Applies a 2D or 3D transformation to an element. In this example, <code>transform: translateY(-150px);</code> moves the element 150 pixels up along the Y-axis.
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>
