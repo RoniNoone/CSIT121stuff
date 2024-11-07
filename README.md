@@ -16,6 +16,8 @@ Demo for my CSIT 121 Students
   <li><a href="practice/table_example.html">Schedule Example for Activity Discussion</a></li>
   <li><a href="practice/form_example.html">Form Example for Bonus Points</a></li>
   <li><a href="practice/animation_example.html">Animation Example</a></li>
+  <li><a href="practice/number-guessing-game-start.html">Guessing Game</a></li>
+  
 </ol>
 
 <h2>Lab Assignment</h2>
