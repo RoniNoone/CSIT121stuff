@@ -4,19 +4,51 @@
   <meta charset="UTF-8">
   <title>Meta Tag Demo</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-    section { border: 2px solid #ccc; border-radius: 8px; padding: 16px; margin-bottom: 24px; }
-    h2 { margin-top: 0; }
-    .note { color: #555; font-size: 0.9em; }
+    body {
+        background-color: lightseagreen;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    p {
+        font-size: 1.2em; 
+    }
+    main {
+        width: 60%;
+        margin: auto;
+        background-color: white;
+        
+    }
+    section, main { 
+        border: 2px solid teal; 
+        border-radius: 8px; 
+        padding: 16px; 
+        margin-bottom: 24px; 
+    }
+    h2 { 
+        margin-top: 0; 
+    }
+    .note { 
+        color: #555; 
+        font-size: 1.1em; 
+    }
   </style>
 </head>
 <body>
+
+<main>
   <h1>HTML Meta Tag Demonstration</h1>
 
-  <!-- Example 1 -->
+
   <section>
-    <h2>1. Without &lt;meta charset="UTF-8"&gt;</h2>
-    <p><strong>Expected issue:</strong> Some characters may display incorrectly.</p>
+<h2>&lt;meta charset="UTF-8"&gt;</h2>
+
+<p>This tells the browser what “character set” to use. A character set is the code that maps numbers to letters, symbols, and emojis. UTF-8 is the standard that covers most languages in the world. Without it, some letters (like é or ü) or symbols might show up as random boxes or question marks.
+
+</p>
+    <h3>Without &lt;meta charset="UTF-8"&gt;</h3>
+
+    <p><strong>Expected issue:</strong> Some characters may display incorrectly. May happen on older or non traditional browsers.</p>
+
+
     <iframe srcdoc="
       <!DOCTYPE html>
       <html>
@@ -24,16 +56,15 @@
         <title>No Charset</title>
       </head>
       <body>
-        <p>Café</p>
-        <p>Smiley 😊</p>
+        <p>Café 😊</p>
       </body>
-      </html>" width="100%" height="120"></iframe>
-    <p class="note">Try viewing on different browsers. You may see &#39;CafÃ©&#39; or a missing emoji.</p>
-  </section>
+      </html>" width="100%" height="60">
+    
+    </iframe>
 
-  <!-- Example 2 -->
-  <section>
-    <h2>2. With &lt;meta charset="UTF-8"&gt;</h2>
+    <p class="note">Try viewing on different browsers. You may see &#39;CafÃ©&#39; or a missing emoji.</p>
+ 
+    <h3>With &lt;meta charset="UTF-8"&gt;</h3>
     <p><strong>Correct display:</strong> Special characters and emojis show properly.</p>
     <iframe srcdoc="
       <!DOCTYPE html>
@@ -43,15 +74,19 @@
         <title>With Charset</title>
       </head>
       <body>
-        <p>Café</p>
-        <p>Smiley 😊</p>
+        <p>Café 😊</p>
       </body>
-      </html>" width="100%" height="120"></iframe>
+      </html>" width="100%" height="60"></iframe>
   </section>
 
-  <!-- Example 3 -->
+
   <section>
-    <h2>3. Without Viewport Meta Tag</h2>
+    <h2>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</h2>
+<p>This tells the browser how to handle the page size on different devices. The “viewport” is the visible area of a webpage. width=device-width makes the page match the screen size of the device (phone, tablet, computer). initial-scale=1.0 makes sure the page isn’t zoomed in or out when it first loads. Without it, pages can look tiny or stretched on mobile devices.
+</p>
+   
+    <h3>Without Viewport Meta Tag</h3>
     <p><strong>Expected issue:</strong> On phones, text appears very tiny.</p>
     <iframe srcdoc="
       <!DOCTYPE html>
@@ -64,11 +99,10 @@
         <p>This text might look fine on desktop, but will shrink on a phone.</p>
       </body>
       </html>" width="100%" height="120"></iframe>
-  </section>
 
-  <!-- Example 4 -->
-  <section>
-    <h2>4. With Viewport Meta Tag</h2>
+
+
+    <h3>With Viewport Meta Tag</h3>
     <p><strong>Correct display:</strong> On phones, text scales to fit the screen.</p>
     <iframe srcdoc="
       <!DOCTYPE html>
@@ -84,5 +118,7 @@
       </body>
       </html>" width="100%" height="120"></iframe>
   </section>
+
+  </main>
 </body>
 </html>
