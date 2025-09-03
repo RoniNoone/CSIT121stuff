@@ -30,5 +30,4 @@ Demo for my CSIT 121 Students
 <li><a href="lab07example/table.html" target="_blank">Lab 07 EXAMPLE</a></li>
 </ol>
 
-<h2>Demos</h2>
-<li><a href="HTMLMetaTagExample.html" target="_blank">Base Meta Tags? Why?</a></li>
+
