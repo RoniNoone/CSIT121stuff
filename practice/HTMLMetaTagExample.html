@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meta Tag Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+    section { border: 2px solid #ccc; border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+    h2 { margin-top: 0; }
+    .note { color: #555; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h1>HTML Meta Tag Demonstration</h1>
+
+  <!-- Example 1 -->
+  <section>
+    <h2>1. Without &lt;meta charset="UTF-8"&gt;</h2>
+    <p><strong>Expected issue:</strong> Some characters may display incorrectly.</p>
+    <iframe srcdoc="
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>No Charset</title>
+      </head>
+      <body>
+        <p>Café</p>
+        <p>Smiley 😊</p>
+      </body>
+      </html>" width="100%" height="120"></iframe>
+    <p class="note">Try viewing on different browsers. You may see &#39;CafÃ©&#39; or a missing emoji.</p>
+  </section>
+
+  <!-- Example 2 -->
+  <section>
+    <h2>2. With &lt;meta charset="UTF-8"&gt;</h2>
+    <p><strong>Correct display:</strong> Special characters and emojis show properly.</p>
+    <iframe srcdoc="
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset='UTF-8'>
+        <title>With Charset</title>
+      </head>
+      <body>
+        <p>Café</p>
+        <p>Smiley 😊</p>
+      </body>
+      </html>" width="100%" height="120"></iframe>
+  </section>
+
+  <!-- Example 3 -->
+  <section>
+    <h2>3. Without Viewport Meta Tag</h2>
+    <p><strong>Expected issue:</strong> On phones, text appears very tiny.</p>
+    <iframe srcdoc="
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>No Viewport</title>
+      </head>
+      <body>
+        <h1>Hello World</h1>
+        <p>This text might look fine on desktop, but will shrink on a phone.</p>
+      </body>
+      </html>" width="100%" height="120"></iframe>
+  </section>
+
+  <!-- Example 4 -->
+  <section>
+    <h2>4. With Viewport Meta Tag</h2>
+    <p><strong>Correct display:</strong> On phones, text scales to fit the screen.</p>
+    <iframe srcdoc="
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>With Viewport</title>
+      </head>
+      <body>
+        <h1>Hello World</h1>
+        <p>Now the text adjusts to the phone screen size properly.</p>
+      </body>
+      </html>" width="100%" height="120"></iframe>
+  </section>
+</body>
+</html>
