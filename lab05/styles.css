@@ -1,0 +1,160 @@
+body {
+    background-color: DarkCyan;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+#special {
+    background-color: LightYellow;
+}
+.highlight {
+    background-color: LightGreen;
+}
+article {
+    padding: 1em;
+}
+
+main, header, footer {
+    background-color: LightCyan;
+    border: 1px solid LightSeaGreen;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column; 
+    gap: 1em;
+     background-color: Azure;
+}
+
+header, footer, nav, main {
+    width: 95%;
+    max-width: 1200px;
+     margin: auto;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* stacks vertically on mobile */
+    gap: .5em;
+    padding: .75em 0em;
+ 
+}
+
+nav ul li a {
+    display: block;
+    padding: .4em .75em;
+
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: CadetBlue;
+    background-color: Azure;
+    border: 1px solid LightSeaGreen;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: LightSeaGreen;
+    color: white;
+}
+
+
+
+
+
+
+article {
+    background-color: Azure;
+}
+article header {
+    width: 100%;
+    border: none; 
+    background-color: transparent;
+    /*needed to clear headings that got applied above*/
+}
+
+h1, h2, h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header h1 {
+    padding: .5em;
+}
+
+main h2 {
+    border-bottom: 1px solid DarkCyan;
+    margin-bottom:-.8em;
+}
+
+.author {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-style: italic; /*removed em tag and replaced with css */
+}
+
+/*all link style that are shared among all states*/
+main a {
+    font-weight: bold;
+}
+/* unvisited link */
+main a:link {
+    color: CadetBlue;
+  }
+  
+  /* visited link */
+  main a:visited {
+    color: LightSeaGreen;
+  }
+  
+  /* mouse over link */
+  main a:hover {
+    color: DarkCyan;
+    background-color: azure;
+  }
+  
+  /* selected link */
+  main  a:active {
+    color: Teal;
+    background-color: LightSeaGreen;
+  }
+
+
+footer p{
+    padding: 1em;
+    font-style: italic;
+}
+
+
+
+
+/* large screen horizontal box layout at 768px and above ── */
+
+@media (min-width: 768px) {
+
+    main, header, footer {
+        width: 85%;
+    }
+
+    nav ul {
+        flex-direction: row;   /* nav links go horizontal on desktop */
+        flex-wrap: wrap;
+        gap: .5em;
+    }
+
+    main {
+        flex-direction: row;   /* articles sit side by side */
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    article {
+        flex: 1 1 45%;         /* two columns, each ~half width */
+        box-sizing: border-box;
+    }
+}
