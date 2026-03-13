@@ -26,29 +26,27 @@ main nav {
 
 
 main nav ul {
-    
     display: flex;
-    padding: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 main nav ul li {
-    margin: 0 1em 
+    margin: 0;
+    flex: 1;
+    text-align: center;
 }
 
 main nav ul li a {
     padding: 0 1em;
     color: black;
     text-decoration: none;
+    display: block;
 }
 main nav ul li a:hover {
     background-color: LightGray;
 }
-section {
  
-}
-
 section img {
     margin: 1em;
     border: 1px solid LightGray;
