@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSIT 121 — Viewer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:      #0f0f0f;
+      --surface: #1a1a1a;
+      --border:  #2e2e2e;
+      --accent:  #f0e04a;
+      --accent2: #4af0c8;
+      --text:    #e8e8e8;
+      --muted:   #888;
+      --radius:  6px;
+      --nav-h:   56px;
+      --mono:    'Space Mono', monospace;
+      --sans:    'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /*
+      We want the page to be EXACTLY the viewport height —
+      the nav sits on top, and the iframe fills everything below.
+      Setting html and body to height: 100% lets us do this.
+    */
+    html, body {
+      height: 100%;
+      overflow: hidden;   /* no scrollbar on the shell page itself */
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+    }
+
+    /*
+      A flex column that fills the full viewport height.
+      nav takes its natural height; iframe gets the rest.
+    */
+    .shell {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* ── STICKY NAV ─────────────────────────────────────────── */
+    /*
+      No need for position:sticky here — inside a flex column
+      the nav just sits at the top naturally and never scrolls
+      because overflow:hidden is on the body.
+    */
+    nav {
+      height: var(--nav-h);
+      flex-shrink: 0;           /* don't let flex squish the nav */
+      background: rgba(15,15,15,0.97);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      gap: 0;
+      overflow-x: auto;
+      z-index: 100;
+    }
+
+    nav a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius);
+      white-space: nowrap;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    nav a.home {
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    nav a:hover { color: var(--text); background: var(--border); }
+
+    /* Active link glows teal so students always know where they are */
+    nav a.active {
+      color: var(--accent2);
+      background: rgba(74,240,200,0.08);
+    }
+
+    nav .divider {
+      width: 1px; height: 20px;
+      background: var(--border);
+      margin: 0 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Open-in-new-tab button on the far right */
+    nav .open-btn {
+      margin-left: auto;
+      padding: 0.3rem 0.9rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: opacity 0.2s;
+    }
+
+    nav .open-btn:hover { opacity: 0.8; }
+
+    /* ── IFRAME ─────────────────────────────────────────────── */
+    /*
+      flex: 1 makes the iframe grow to fill ALL remaining height
+      after the nav. Combined with width: 100% it fills the
+      full viewport below the nav bar.
+    */
+    iframe {
+      flex: 1;              /* fill remaining vertical space */
+      width: 100%;
+      border: none;         /* remove the default iframe border */
+      background: #fff;     /* white bg while the page loads */
+    }
+
+    /* ── ERROR STATE ────────────────────────────────────────── */
+    /* Shown when no ?page= parameter is provided */
+    .error {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+    }
+
+    .error span {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .error a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shell">
+
+    <!-- ══════════════════════════════════════════════════════════
+         NAV — identical on every page, lives only in this one file
+         The "active" class is applied by JavaScript below
+    ═══════════════════════════════════════════════════════════ -->
+    <nav id="main-nav">
+      <a href="index.html" class="home">CSIT&nbsp;121</a>
+      <div class="divider"></div>
+      <a href="viewer.html?page=lab01/aboutme.html"         data-page="lab01/aboutme.html">Lab 01</a>
+      <a href="viewer.html?page=lab02/"                     data-page="lab02/">Lab 02</a>
+      <a href="viewer.html?page=lab03/"                     data-page="lab03/">Lab 03</a>
+      <a href="viewer.html?page=lab04/"                     data-page="lab04/">Lab 04</a>
+      <a href="viewer.html?page=lab05/"                     data-page="lab05/">Lab 05</a>
+      <a href="viewer.html?page=lab07example/table.html"    data-page="lab07example/table.html">Lab 07</a>
+      <a href="viewer.html?page=practice/demo.html"         data-page="practice/demo.html">Practice</a>
+
+      <!-- This link updates dynamically to open the current lab in its own tab -->
+      <a id="open-btn" class="open-btn" href="#" target="_blank">↗ open</a>
+    </nav>
+
+    <!-- The iframe or error message is injected here by JavaScript -->
+    <div id="content"></div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       JAVASCRIPT
+       This is the engine of the viewer. Here's what it does:
+
+       1. Read the URL parameter:  viewer.html?page=lab01/aboutme.html
+                                                 ^^^^^^^^^^^^^^^^^^^^
+                                                 this is the "page" param
+
+       2. Validate it (make sure someone didn't put a weird URL in)
+
+       3. Inject an <iframe> pointing at that file
+
+       4. Highlight the matching nav link as "active"
+
+       5. Update the "open" button to link to the raw file
+  ═══════════════════════════════════════════════════════════ -->
+  <script>
+
+    // ── STEP 1: Read the URL parameter ──────────────────────────
+    //
+    // window.location.search is the "?page=lab01/aboutme.html" part of the URL.
+    // URLSearchParams parses it into key/value pairs.
+    //
+    const params = new URLSearchParams(window.location.search);
+    const page   = params.get('page');   // e.g. "lab01/aboutme.html"
+
+
+    // ── STEP 2: Validate ─────────────────────────────────────────
+    //
+    // We only allow relative paths — no http://, no //, no ../ tricks.
+    // This is a basic security check called "input sanitisation".
+    //
+    const isSafe = page && !page.startsWith('http') && !page.startsWith('//') && !page.includes('../');
+
+    const contentEl = document.getElementById('content');
+
+    if (!isSafe) {
+      // Show a friendly error if no valid page was provided
+      contentEl.innerHTML = `
+        <div class="error">
+          <span>🤔</span>
+          <p>No page specified.</p>
+          <a href="index.html">← Back to index</a>
+        </div>`;
+
+    } else {
+
+      // ── STEP 3: Inject the iframe ──────────────────────────────
+      //
+      // We create an <iframe> element in JavaScript and set its src
+      // to the page we want to show. The iframe fills the remaining
+      // height because of the CSS flex: 1 rule above.
+      //
+      const iframe = document.createElement('iframe');
+      iframe.src   = page;
+      iframe.title = 'Lab content';
+
+      // Replace the content div with our iframe
+      contentEl.replaceWith(iframe);
+
+
+      // ── STEP 4: Highlight the active nav link ──────────────────
+      //
+      // Each nav link has a data-page attribute we can compare
+      // against the current "page" parameter.
+      //
+      const navLinks = document.querySelectorAll('#main-nav a[data-page]');
+
+      navLinks.forEach(link => {
+        if (link.dataset.page === page) {
+          link.classList.add('active');
+        }
+      });
+
+
+      // ── STEP 5: Update the "open" button ──────────────────────
+      //
+      // The ↗ open button lets users pop the lab out into its own
+      // browser tab so they can see the real URL and inspect it.
+      //
+      document.getElementById('open-btn').href = page;
+
+
+      // ── BONUS: Update the browser tab title ───────────────────
+      //
+      // Extract the filename from the path and use it as the title.
+      // e.g. "lab01/aboutme.html" → "aboutme.html — CSIT 121"
+      //
+      const filename = page.split('/').filter(Boolean).pop();
+      document.title = filename + ' — CSIT 121';
+    }
+
+  </script>
+
+</body>
+</html>
